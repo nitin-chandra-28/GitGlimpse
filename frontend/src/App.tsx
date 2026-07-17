@@ -16,7 +16,7 @@ export default function App() {
     setAnalysisData(null)
 
   try {
-      const searchRes = await fetch(`/api/github/search?q=${encodeURIComponent(userIdea)}`)
+      const searchRes = await fetch(`${import.meta.env.VITE_API_URL}/api/github/search?q=${encodeURIComponent(userIdea)}`)
       if (!searchRes.ok) throw new Error(`Search failed: ${searchRes.statusText}`)
       const responseData = await searchRes.json()
 
@@ -47,7 +47,7 @@ export default function App() {
 
   const handleFetchInsights = async () => {
     try {
-      const metaRes = await fetch(`/api/github/meta-analysis?q=${encodeURIComponent(idea)}`)
+      const metaRes = await fetch(`${import.meta.env.VITE_API_URL}/api/github/meta-analysis?q=${encodeURIComponent(idea)}`)
       if (!metaRes.ok) throw new Error(`Meta analysis failed: ${metaRes.statusText}`)
       const insightData = await metaRes.json()
 
