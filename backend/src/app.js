@@ -7,7 +7,7 @@ import githubRoutes from './routes/githubRoutes.js';
 const app = express();
 
 
-app.use(cors({ origin: 'http://localhost:5173'}));
+app.use(cors({ origin: 'https://git-glimpse-alpha.vercel.app/'}));
 app.use(express.json());
 
 app.use('/api/github', githubRoutes);
